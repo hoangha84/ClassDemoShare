@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Thông tin đăng nhập</legend>
+            <label for="userid">Tên đăng nhập:</label>
+            <input type="text" name="user" id="userid" disabled value="abc">
+            <br>
+            <label for="passid">Mật khẩu:</label>
+            <input type="password" name="pass" id="passid" placeholder="Nhập password">
+            <br>
+            <label for="repassid">Nhập lại mật khẩu:</label>
+            <input type="password" name="repass" id="repassid" placeholder="Nhập lại password">
+        </fieldset>
+        <fieldset>
+            <legend>Thông tin cá nhân</legend>
+            <label for="provinceid">Nơi ở hiện tại:</label>
+            <select name="province" id="provinceid">
+                <option value="tphcm">Thành phố Hồ Chí Minh</option>
+                <option value="hanoi">Hà Nội</option>
+                <option value="danang">Đà Nẵng</option>
+            </select>
+            <br>
+            Giới tính: 
+            <input type="radio" name="gender" id="gmale" value="nam" checked>
+            <label for="gmale">Nam </label>
+            <input type="radio" name="gender" id="gfemale" value="nu">
+            <label for="gfemale">Nữ </label>
+            <input type="radio" name="gender" id="gnon" value="non">
+            <label for="gnon">Không nói</label>
+            <br>
+            Sở thích:
+            <input type="checkbox" name="fav1" id="sport" value="thethao">
+            <label for="sport">Thể thao</label>
+            <input type="checkbox" name="fav2" id="music" value="amnhac">
+            <label for="music">Âm nhạc</label>
+            <input type="checkbox" name="fav3" id="movie" value="phimanh">
+            <label for="movie">Phim ảnh</label>
+            <br>
+            <label for="colorid">Màu ưa thích: </label>
+            <input type="color" name="favcolor" id="colorid" value="#0000FF">
+            <br>
+            <label for="birthdayid">Ngày sinh: </label>
+            <input type="date" name="birthday" id="birthdayid" min="2000-01-01" max="2000-12-31">
+            <br>
+            <label for="emailid">Email: </label>
+            <input type="email" name="email" id="emailid">
+            <br>
+            <label for="avtid">Chọn hình đại diện: </label>
+            <input type="file" name="avt" id="avtid">
+            <br>
+            <label for="tdid">Trình độ: </label>
+            <input type="number" name="trinhdo" id="tdid" step="10x ">
+            <br>            
+            <input type="range" name="range" id="rangid" min="0" max="5" step="0.5">
+        </fieldset>
+        <input type="reset" value="Input reset button">
+        <button type="reset">Reset type button</button>
+        <input type="submit" name="submitType" value="Submit 1" formaction="">
+        <input type="submit" name="submitType" value="Submit 2" formmethod="post">
+    </form>
+</body>
+</html>

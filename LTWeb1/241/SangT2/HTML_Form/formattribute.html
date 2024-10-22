@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute form</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Form 1</legend>
+        <form action="" id="frm1">
+            <input type="text" name="txt1" value="a">
+            <input type="submit">
+        </form>
+    </fieldset>
+        
+    <fieldset>
+        <legend>Form 2</legend>
+        <form action="" id="frm2">
+            <input type="text" name="txt2" value="b">
+            <input type="text" name="txt3" value="c" form="frm1">
+            <input type="submit">
+        </form>
+    </fieldset>
+</body>
+</html>
