@@ -1,0 +1,21 @@
+#first {
+    color:red;
+}
+.center {
+    text-align: center;
+}
+.blue {
+    color: blue;
+}
+h1.bg {
+    background-color: beige;
+}
+p.bg {
+    background-color: yellow;
+}
+p.big {
+    font-size: 150%;
+}
+h1.big {
+    font-size: 300%;
+}
