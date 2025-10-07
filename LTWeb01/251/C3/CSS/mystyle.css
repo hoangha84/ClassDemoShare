@@ -1,0 +1,21 @@
+/* Simple selector: HTML element name */
+h1,
+h2,
+p {
+  color: red;
+}
+* {
+  font-size: 150%;
+}
+/* Simple selector: id */
+#main {
+  background-color: lime;
+}
+/* Simple selector: class name */
+.highlight {
+  font-style: italic;
+  color: blue;
+}
+.center {
+  text-align: center;
+}
