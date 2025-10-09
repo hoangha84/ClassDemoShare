@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Forms</title>
+    <style>
+      label {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <input type="text" name="test" id="idTest" 
+    placeholder="Nhập gì đó" form="myForm"/>
+
+    <form action="login.php" method="get" id="myForm">
+    <!-- <form method="get" id="myForm"> -->
+      <!-- <form action="login.php" method="post"> -->
+      <label for="idUsername">Username:</label>
+      <input
+        type="search"
+        name="username"
+        id="idUsername"
+        placeholder="Nhập username của bạn" required
+      />
+      <br />
+      <label for="idPassword">Password:</label>
+      <input
+        type="password"
+        name="password"
+        id="idPassword"
+        placeholder="Nhập mật khẩu của bạn"
+      />
+      <br />
+      <select name="namsinh" id="idNamsinh">
+        <option value="Truoc2000">Từ năm 1999 về trước</option>
+        <option value="2000" selected>Năm 2000</option>
+        <option value="2005">Năm 2005</option>
+      </select>
+      <br />
+      <label for="idNam">Nam</label>
+      <input type="radio" name="gioitinh" id="idNam" value="Male" checked />
+      <label for="idNu">Nữ</label>
+      <input type="radio" name="gioitinh" id="idNu" value="Female" />
+      <br />
+      <label for="idLang1">Java</label>
+      <input type="checkbox" name="lang1" id="idLang1" value="Java" />
+      <label for="idLang2">PHP</label>
+      <input type="checkbox" name="lang2" id="idLang2" value="PHP" checked />
+      <label for="idLang3">C#</label>
+      <input type="checkbox" name="lang3" id="idLang3" value="C#" />
+      <br>
+      <label for="favColor">Màu ưa thích </label>
+      <input type="color" name="favColor" id="idFavColor">
+
+      <fieldset>
+        <legend>Action</legend>
+        <input type="submit" value="Đăng nhập" />
+        <input type="reset" value="Nhập lại" />
+      </fieldset>
+    </form>
+  </body>
+</html>

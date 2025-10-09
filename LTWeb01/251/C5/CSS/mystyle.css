@@ -1,0 +1,18 @@
+/* HTML element name as selector */
+p,
+h1,
+.blued {
+  color: blue;
+}
+/* ID as selector */
+#firstParagraph {
+  font-weight: bold;
+}
+
+/* Class as selector */
+.center {
+  text-align: center;
+}
+.bordered {
+  border: 2px solid green;
+}
