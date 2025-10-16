@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo-elements Selector</title>
+    <style>
+        body{
+            font-size: 200%;
+        }
+        /* Pseudo-element selector for first line */
+        p::first-line {
+            color: blue;
+            font-size: 150%;
+            font-style: italic;
+        }
+        /* Pseudo-element selector for first letter */
+        p::first-letter {
+            color: red;
+            font-size: 300%;
+            font-weight: bold;
+        }
+        /* Pseudo-element selector for before */
+        h1::before {
+            content: "★ ";
+            color: orange;
+            font-size: 150%;
+        }
+        /* Pseudo-element selector for after */
+        h1::after {
+            content: " ★";
+            color: blueviolet;
+            font-size: 150%;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Pseudo-elements Selector</h1>
+    <h1>CSS Pseudo-elements Selector</h1>
+    <p>This is a paragraph. The first letter and the first line are styled differently using pseudo-elements.</p>
+    <p>This is another paragraph. The first letter and the first line are styled differently using pseudo-elements.</p>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo Class Selector</title>
+    <style>
+        body{
+            font-size: 200%;
+        }
+        p.highlight {
+            color: blue;
+            font-style: italic;
+        }
+        /* Pseudo class selector */
+        .highlight:hover {
+            color: red;
+            font-weight: bold;
+        }
+        /* Styling links with pseudo classes */
+        a:link, a:visited {
+            text-decoration: none;
+            color: white;
+            background-color: blue;
+            padding: 15px;
+            border-radius: 20px;
+        }
+        /* Pseudo class for hover state */
+        a:hover {
+            color: lime;
+            background-color: black;
+            padding: 15px;
+            border-radius: 20px;
+        }
+        /* Pseudo class for first child */
+        h1:first-child {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- <p>P</p> -->
+    <h1 class="highlight">CSS Pseudo Class Selector</h1>
+    <h1 class="highlight">CSS Pseudo Class Selector</h1>
+    <p class="highlight">This is a paragraph. Hover over me to see the effect!</p>
+    <p>This is another paragraph. Hover over me too!</p>
+    <a href="#">This is a link</a>
+</body>
+</html>

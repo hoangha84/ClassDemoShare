@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo selector</title>
+    <style>
+        body{
+            font-size: 200%;
+        }
+        /* Pseudo-class */
+        li:hover{
+            color: red;
+            font-weight: bold;
+        }
+        /* Pseudo-element */
+        h1::first-letter{
+            color: blue;
+            font-size: 300%;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1::after{
+            content: ' 🗽';
+            font-size: 200%;
+        }
+        li::marker {
+            content: "★ ";
+            color: orange;
+            font-size: 150%;
+        }
+        ::selection {
+            background: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nội dung học phần</h1>
+    <h1>1</h1>
+    <ul>
+        <li>CSS Pseudo-class</li>
+        <li>CSS Pseudo-element</li>
+        <li>CSS Pseudo-classes vs Pseudo-elements</li>
+    </ul>
+</body>
+</html>

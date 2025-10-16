@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Combinator Selector</title>
+    <style>
+        body{
+            font-size: 200%;
+        }
+        /* Selects all <p> elements that are descendants of a <div> */
+        div p {
+            color: red;
+        }
+        /* Selects all <p> elements that are direct children of a <div> */
+        div > p {
+            background-color: yellow;
+        }
+        /* Selects all <p> elements that are immediately preceded by an <h1> */
+        h1 + p {
+            border: 2px solid blue;
+        }
+        /* Selects all <p> elements that are preceded by an <h1> (not necessarily immediately) */
+        h1 ~ p {
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>First paragraph</p>
+        <h1>CSS Combinator Selector Example</h1>
+        <h2>Test</h2>
+        <p>This is a paragraph inside a div.</p>
+        <p>This is a paragraph inside a div.</p>
+        <span>This is a span inside the same div.</span>
+        <section>
+            <h2>Inside section element</h2>
+            <p>This is a nested paragraph inside another section.</p>
+            <p>This is a nested paragraph inside another section.</p>
+        </section>
+    </div>
+</body>
+</html>
