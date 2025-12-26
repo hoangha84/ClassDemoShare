@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript VD 01</title>
+    <style>
+        img {
+            width: 200px;            
+        }
+        button {
+            width: 200px;
+            height: 100px;
+            font-size: 30px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <img id="bulb" src="pic_bulboff.gif" alt="off">
+    <br>
+    <button type="button" onclick="document.getElementById('bulb').src='pic_bulbon.gif'">Turn on</button>
+    <button type="button" onclick="document.getElementById('bulb').src='pic_bulboff.gif'">Turn off</button>
+    <br>
+    <button id="btnOver" style="color:red;" type="button" onmouseover="turnLightOn()" onmouseleave="turnLightOff()">Move mouse over me!</button>
+
+
+    <script>
+        function turnLightOn() {            
+            // console.log("Turn on function called");
+            document.getElementById('bulb').src = 'pic_bulbon.gif';
+            document.getElementById('btnOver').innerHTML = 'Light is ON';
+            // document.getElementById('btnOver').style = "background-color: yellow;";
+            document.getElementById('btnOver').style.backgroundColor = 'yellow';
+        }
+
+        function turnLightOff() {
+            document.getElementById('bulb').src = 'pic_bulboff.gif';
+            // window.alert("test");
+            document.getElementById('btnOver').innerHTML = 'Move mouse over me!';
+            //clear the background color
+            document.getElementById('btnOver').style.backgroundColor = '';
+        }
+    </script>
+</body>
+</html>
