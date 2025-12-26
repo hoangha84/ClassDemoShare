@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Javascript VD 02 - JS Output</title>
+        <style>
+            body {
+                font-size: 300%;
+            }
+            button {
+            width: 200px;
+            height: 100px;
+            font-size: 30px;
+            margin-top: 10px;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Heading 1</h1>
+        <p id="myP">This is a paragraph.</p>
+        <button type="button" onclick="changeText();">Change paragraph content</button>
+        <script>
+            document.write("<h2>This is written by Javascript using document.write()</h2>");
+            document.write("<p>This is a paragraph written by Javascript using document.write()</p>");
+        </script>
+        <p>This is another paragraph.</p>
+        <button type="button" onclick="myFunction();">Don't click me!</button>
+
+        <script>
+            function myFunction() {
+                document.write("<h2>You clicked the button!</h2>");
+            }
+
+            function changeText() {
+                // document.getElementById("myP").innerHTML = "The <b>paragraph</b> content <br>has been changed!";
+                // document.getElementById("myP").innerText = "The <b>paragraph</b> content <br>has been changed!";
+                document.getElementById("myP").outerHTML = "<h3>The paragraph has been changed to a heading 3!</h3>";                
+                window.print();
+            }
+        </script>
+    </body>
+</html>
