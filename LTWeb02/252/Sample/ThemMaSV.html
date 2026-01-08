@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="pString" id="pString" value="312541" readonly />
+    <input type="number" name="pNum" id="pNum" value="0016" />
+    <input
+      type="button"
+      value="Make Next student ID"
+      onclick="makeNextStudentID()"
+    />
+    <ul id="studentList">
+      <li>3125410016</li>
+    </ul>
+    <script>
+            function makeNextStudentID() {
+        let preText = document.getElementById("pString").value;
+        let curId = document.getElementById("pNum").value;
+
+        // Convert curId to a number and increment by 1
+        let nextIdNum = parseInt(curId, 10) + 1;
+
+        // Format nextIdNum to be 4 digits with leading zeros
+        let nextIdStr = nextIdNum.toString().padStart(4, "0");
+
+        // Combine preText and nextIdStr to form the new student ID
+        let newStudentID = preText + nextIdStr;
+
+        // Create a new list item and append it to the studentList
+        let li = document.createElement("li");
+        li.textContent = newStudentID;
+        document.getElementById("studentList").appendChild(li);
+
+        // Update the pNum input field with the new ID
+        document.getElementById("pNum").value = nextIdStr;
+      }
+    </script>
+  </body>
+</html>

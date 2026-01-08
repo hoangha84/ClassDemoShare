@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.4. Tính toán giữa 2 số</title>
+    <style>
+      input[type="button"] {
+        width: 30px;
+        background-color: black;
+        border-style: solid;
+        color: white;
+      }
+    </style>
+  </head>
+  <body onload="fAdd();">
+    <input type="number" name="num1" id="num1" value="5" />
+    <input type="button" value="+" onclick="return fAdd();""> <input
+    type="button" value="-" onclick="fSub();""> <input type="button" value="*"
+    onclick="fMul();""> <input type="button" value="/" onclick="fDiv();"">
+    <input type="button" value="^" onclick="fPow();"">
+    <input type="number" name="num2" id="num2" value="3" /> =
+    <input type="text" name="result" id="result" readonly />
+    <script>
+      function fAdd() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+        document.getElementById("result").value = n1 + n2;
+      }
+
+      function fSub() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+        document.getElementById("result").value = n1 - n2;
+      }
+
+      function fMul() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+        document.getElementById("result").value = n1 * n2;
+      }
+
+      function fDiv() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+        if (n2 !== 0) {
+          document.getElementById("result").value = n1 / n2;
+        } else {
+          document.getElementById("result").value = "Cannot divide by zero!";
+        }
+      }
+
+      function fPow() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+        document.getElementById("result").value = n1 ** n2;
+      }
+    </script>
+  </body>
+</html>
