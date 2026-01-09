@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datatypes in JS</title>
+</head>
+<body>
+    <input type="text" id="num1" value="10" />
+    <input type="button" value="Add 5" onclick="myFunc();"/>
+    <script>
+        let a = 11111111111111111111111111111111111n;
+        let b = BigInt(25);
+
+        console.log(typeof(a));
+        console.log(typeof b);
+
+        function myFunc() {
+            let num1 = document.getElementById("num1").value;
+            console.log("num1: " +typeof num1);
+            // document.getElementById("num1").value = Number(num1) + 5;
+            document.getElementById("num1").value = (num1 + 5) / 2;
+        }
+    </script>
+</body>
+</html>

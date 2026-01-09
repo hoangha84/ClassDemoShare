@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datatypes in JS</title>
+  </head>
+  <body>
+    <input type="text" id="num0" value="2" />
+    <input type="text" id="num1" value="122" />
+    <input type="button" value="Add 10" onclick="add10()" />
+    <input type="button" value="Compare" onclick="compare()" />
+    <p id="output"></p>
+
+    <script>
+      function add10() {
+        let out = document.getElementById("output");
+        let num0 = document.getElementById("num0").value;
+        let num1 = document.getElementById("num1").value;
+        document.getElementById("num0").value = Number(num0) + 10;
+      }
+
+      function compare() {
+        let out = document.getElementById("output");
+        let num0 = document.getElementById("num0").value;
+        let num1 = document.getElementById("num1").value;
+
+        if (num0 > num1) out.innerHTML = num0 + ">" + num1;
+        else if (num0 < num1) out.innerHTML = num0 + "<" + num1;
+        else out.innerHTML = num0 + "=" + num1;
+      }
+    </script>
+  </body>
+</html>

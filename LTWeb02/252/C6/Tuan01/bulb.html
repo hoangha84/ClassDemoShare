@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulb</title>
+  </head>
+  <body>
+    <select name="year" id="year">
+      <script>
+        for (let i = 1900; i <= 2026; i++) {
+          document.write("<option value=" + i + ">" + i + "</option>");
+        }
+      </script>
+    </select>
+    <img src="pic_bulboff.gif" alt="off" id="bulb" />
+    <input type="button" value="Turn on" onclick="turnOn();" />
+    <button onclick="turnOff();">Turn off</button>
+    <ul id="output"></ul>
+
+    <script>
+      document.write("<h1>Hello World</h1>");
+      function turnOn() {
+        document.getElementById("bulb").src = "pic_bulbon.gif";
+        // document.write("<h2>In turnOn function</h2>");
+        console.log("Bulb is turned on");
+        //Add content to ul "output"
+        document.getElementById("output").innerHTML =
+          document.getElementById("output").innerHTML +
+          "<li>Bulb is turned on</li>";
+        // document.getElementById("output").innerText = document.getElementById("output").innerHTML + "<li>Bulb is turned on</li>";
+      }
+      function turnOff() {
+        document.getElementById("bulb").src = "pic_bulboff.gif";
+
+        // document.getElementById("output").innerHTML += "<li>Bulb is turned off</li>";
+        document.getElementById("output").outerHTML =
+          "<ol id='output'><li>Bulb is turned off</li></ol>";
+      }
+    </script>
+  </body>
+</html>

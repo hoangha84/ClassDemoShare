@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">My Paragraph</p>
+	<input type="button" onclick="myFunc();" value="Change style!">
+	<input type="button" onclick="changeColor();" value="Change color!">
+	<input type="button" onclick="changeBackgroundColor();" value="Change background color!">
+	<input type="button" onclick="hide();" value="Hide!">
+	<input type="button" onclick="show();" value="Show!">
+
+	<script>
+	function myFunc(){
+		document.getElementById("demo").style = "color:red; font-size:35px;"
+		// document.getElementById("demo").style.color = "red";
+		// document.getElementById("demo").style.fontSize = "35px";
+		// window.print();
+	}
+
+	function changeColor(){
+		// document.getElementById("demo").style = "color:yellow;"
+		document.getElementById("demo").style.color = "yellow";
+	}
+	function changeBackgroundColor(){
+		// document.getElementById("demo").style = "color:yellow;"
+		document.getElementById("demo").style.backgroundColor = "navy";
+	}
+	
+	function hide(){
+		// document.getElementById("demo").style.display = "none";
+		document.getElementById("demo").style.visibility = "hidden";
+	}
+	
+	function show(){
+		// document.getElementById("demo").style.display = "block";
+		document.getElementById("demo").style.visibility = "visible";
+	}
+	</script>
+</body>
+</html>

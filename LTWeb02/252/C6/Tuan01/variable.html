@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables in JS</title>
+</head>
+<body>
+    <script>
+        // let $ = 5;
+        // let $$ = 10;
+        // let $_$ = 0;
+        // let $__$$$ = 100;
+        // document.write($ + $$ + $**$_$ + $__$$$);
+
+        var x = 5;
+        console.log("before block scope: "+x);
+
+        var x = 6;
+
+        {
+            console.log("begin inside block scope: "+x);
+            var x = 10;
+            console.log("after inside block scope: "+x);
+        }
+
+        console.log("after block scope: "+x);
+
+        let ba = 234242377326593845734593843488935983495349539845n;
+        console.log(ba*2n);
+    </script>
+</body>
+</html>
