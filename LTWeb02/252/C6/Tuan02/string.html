@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String in JS</title>
+    <style>
+        #output {
+            color: red;
+        }
+        #area {
+            height: 100px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <label for="fName">Tên:</label>
+    <input type="text" id="fName" value="Hà">
+    <label for="lName">Họ:</label>
+    <input type="text" id="lName" value="Hoàng">
+    <input type="button" value="Say Hi!" onclick="sayHi();">
+    <textarea id="area"></textarea>
+    <p id="output"></p>
+    <script>
+        function sayHi(){
+            let out = document.getElementById("output");
+            // let fN = document.getElementById("fName").value;
+            let fN = document.getElementById("fName").value.replaceAll("0","");
+            let lN = document.getElementById("lName").value;
+            // out.innerHTML = "Chào bạn " + lN + " " + fN + "!!!!!";
+            let temp = `Chào bạn \n ${lN}\t ${fN}\n!!!!!<br>`;
+            out.innerHTML = temp;
+
+            document.getElementById("area").innerHTML = temp;
+
+            let x = 8;
+            for(let i = 1; i<=10; i++){
+                out.innerHTML += `${x} * ${i} = ${(x*i).toFixed(1)}<br>`;
+            }
+
+            let pr = 25000000000;
+            out.innerHTML += `${pr.toLocaleString("vi-VN",{style:"currency", currencyDisplay:"name", currency:"USD"})}<br>`;
+            out.innerHTML += `${pr.toLocaleString("en-US",{style:"currency", currencyDisplay:"name", currency:"USD"})}<br>`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check mobile number</title>
+    <style>
+      #output {
+        color: red;
+      }
+      input[type="text"]{
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="txtMobile">Số điện thoại</label>
+    <input
+      type="text"
+      name="txtMobile"
+      id="txtMobile"
+      placeholder="Nhập số điện thoại"
+      value="1234567890"
+    />
+    <br />
+    <label for="txtEmail">Email</label>
+    <input
+      type="text"
+      name="txtEmail"
+      id="txtEmail"
+      placeholder="Nhập email"
+      value="abc.sgu@gmail.com"
+    />
+    <p id="output"></p>
+    <input type="button" value="Check validation" onclick="checkAll();" />
+    <script>
+      function checkAll() {
+        output.innerHTML = "";
+        checkMobileNumber();
+        checkEmail();
+      }
+      function checkMobileNumber() {
+        let output = document.getElementById("output");
+        let mobiNo = document.getElementById("txtMobile").value;
+        // let pattern = /0\d{9}/g;
+        // if (mobiNo.length != 10 || mobiNo.search(pattern) < 0) {
+        //   output.innerHTML += "Số điện thoại không hợp lệ<br>";
+        // }
+        let pattern = /^0\d{9}$/;
+        // let pattern = /\b0\d{9}\b/;
+        if (mobiNo.search(pattern) < 0) {
+          output.innerHTML += "Số điện thoại không hợp lệ<br>";
+        }
+      }
+      function checkEmail() {
+        let output = document.getElementById("output");
+        let email = document.getElementById("txtEmail").value;
+        // let pattern = /\w+@\w+.\w+/g;
+        let pattern = /./g;
+        // if (email.search(pattern) < 0) {
+        //   output.innerHTML += "Địa chỉ email không hợp lệ<br>";
+            output.innerHTML += email.match(pattern);
+        // }
+      }
+    </script>
+  </body>
+</html>

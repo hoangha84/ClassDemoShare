@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression in JS</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let str = `Explore <b>Microsoft</b> products and services and support for your home or business. 
+        Shop <b>miCRosoft</b> 365, Copilot, Teams, Xbox, Windows, Azure, Surface and more.`;
+        let demo = document.getElementById("demo");
+        // demo.innerHTML = str.search(/microsoft/i);
+        // demo.innerHTML = str.replace(/microsoft/ig, "Amazon");
+        // demo.innerHTML = str.match(/microsoft|windows/ig);
+        demo.innerHTML = str.replace(/microsoft|windows/ig, "");
+    </script>
+</body>
+</html>

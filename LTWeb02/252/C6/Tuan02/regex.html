@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regular Expression in JS</title>
+    <style>
+      input[type="text"] {
+        width: 600px;
+      }
+      ul {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="text"
+      name="str"
+      id="str"
+      value="Welcome to Microsoft Company! We sell MICROSOFT ___Windows, mICroSOft Office 365 and more..."
+    />
+    <input type="text" name="mobi" id="mobi" value="1234567890" />
+    <input type="text" id="email" value="andysgu@gmail.com">
+    <input type="button" value="Check" onclick="checkForm();" />
+    <ul id="output"></ul>
+    <script>
+      function checkForm() {
+        let out = document.getElementById("output");
+        out.innerText = "";
+        checkMobile();
+        checkEmail();
+      }
+      function checkEmail(){
+        let out = document.getElementById("output");
+        let txt = document.getElementById("email").value;
+        let webPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let pattern = /^\w+@\w+\.\w+$/;
+        if (txt.search(webPattern) < 0) {
+          out.innerHTML += `<li>Địa chỉ email không hợp lệ</li>`;
+        }
+      }
+      function checkMobile() {
+        let out = document.getElementById("output");
+        let mobi = document.getElementById("mobi").value;
+        let pattern = /^0\d{9}$/g;
+        if (mobi.search(pattern) < 0) {
+          out.innerHTML += `<li>Số điện thoại không hợp lệ</li>`;
+        }
+      }
+      function test() {
+        let out = document.getElementById("output");
+        let str = document.getElementById("str").value;
+
+        // out.innerHTML = str.search(/mICroSOft/i);
+        // out.innerHTML = str.match(/mICroSOft/ig);
+        out.innerHTML = str.replace(/mICroSOft/gi, "<b>Google</b>");
+        // out.innerHTML = str.replace(/\W/gi, "");
+
+        out.innerHTML += "<br>";
+        let mobi = document.getElementById("mobi").value;
+        // Dùng length
+        // let pattern = /0\d{9}/g;
+        // if(mobi.length!=10 || mobi.search(pattern) < 0) {
+        //     out.innerHTML += `<ul><li>Số điện thoại không hợp lệ</li></ul>`;
+        // }
+
+        // Dùng regex
+        let pattern = /^0\d{9}$/g;
+        // out.innerHTML += mobi.match(/\b0\d{9}\b/g);
+        out.innerHTML += mobi.match(/./g);
+        if (mobi.search(pattern) < 0) {
+          out.innerHTML += `<ul><li>Số điện thoại không hợp lệ</li></ul>`;
+        }
+      }
+    </script>
+  </body>
+</html>
