@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in JS</title>
+</head>
+<body>
+    <p id="out"></p>
+    <script>
+        const output = document.getElementById("out");
+        function tich(a,b) {
+            return a*b;
+        }
+        const tong = function (a,b) { return a+b;};
+        const hieu = (a,b) => {return a-b};
+        const thuong = (a,b) => b == 0 ? "Cannot divide zero!!!" : (a/b);
+
+        let a = 5;
+        let b = 0;
+
+        output.innerHTML += `${a} + ${b} = ${tong(a,b)}<br>`;
+        output.innerHTML += `${a} - ${b} =  ${hieu(a,b)}<br>`;
+        output.innerHTML += `${a} * ${b} =  ${tich(a,b)}<br>`;
+        output.innerHTML += `${a} / ${b} =  ${thuong(a,b)}<br>`;
+
+        const car = {
+            brand: "Mercedes",
+            model: "S450",
+            getBrand: function () {return this.brand;},
+            // Không hiểu this.model
+            // getModel: () => {return this.model;},
+            
+            getModel: function() {return this.model;},            
+        }
+
+        output.innerHTML += `Car brand: ${car.getBrand()}, model: ${car.getModel()}<br>`;
+    </script>
+</body>
+</html>

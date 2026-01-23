@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Current Calendar in JS</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 70%;
+      }
+      td,
+      th {
+        border: 1px solid forestgreen;
+      }
+      th {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body onload="loadCurrentMonth()">
+    <table id="calendar">
+      <tr>
+        <th>Su</th>
+        <th>Mo</th>
+        <th>Tu</th>
+        <th>We</th>
+        <th>Th</th>
+        <th>Fr</th>
+        <th>Sa</th>
+      </tr>
+    </table>
+    <script>
+      const today = new Date();
+      const calendar = document.getElementById("calendar");
+      function loadCurrentMonth() {
+        const firstDate = new Date(today.getFullYear(), today.getMonth(), 1);
+        const firstDay = firstDate.getDay();
+        console.log(firstDay);
+        for (let i = 0; i < 30; i++) {
+          const newTR = document.createElement("tr");
+          if (i < firstDay) {
+            const newTD = document.createElement("td");
+            newTD.innerHTML = "";
+            newTR.appendChild(newTD);
+            continue;
+          }
+          const newTD = document.createElement("td");
+          newTD.innerHTML = i;
+          newTR.appendChild(newTD);
+          calendar.appendChild(newTR);
+        }
+      }
+    </script>
+  </body>
+</html>

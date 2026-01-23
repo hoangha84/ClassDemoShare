@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML DOM in JS</title>
+    <style>
+      #container {
+        display: flex;
+        background-color: aqua;
+      }
+      #container div {
+        background-color: darkblue;
+        color: white;
+        padding: 10px;
+        margin: 10px 20px;
+        width: 80px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="container">
+      <div>Home</div>
+      <div>Products</div>
+      <div>About us</div>
+    </header>
+
+    <input type="button" value="Change menu" onclick="changeMenu()" />
+    <input type="button" value="Add menu item" onclick="addMenuItem()" />
+
+    <script>
+      function changeMenu() {
+        const con = document.getElementById("container");
+        const div = con.getElementsByTagName("div");
+        console.log(div[0].innerHTML);
+        for (let i = 0; i < div.length; i++) {
+          div[i].innerHTML = "CHANGE!";
+        }
+      }
+
+      function addMenuItem() {
+        const con = document.getElementById("container");
+        const newItem = document.createElement("div");
+        newItem.innerHTML = "New item";
+        con.appendChild(newItem);
+      }
+    </script>
+  </body>
+</html>

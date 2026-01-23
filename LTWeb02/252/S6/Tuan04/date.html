@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date in JS</title>
+    <style>
+        p {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <p id="out"></p>
+    <script>
+        const output = document.getElementById("out");
+        const today = new Date();
+        const anotherDay = new Date ("2025-09-05 11:30:00");
+        output.innerHTML += `Today: ${today.toDateString()}<br>`;
+        output.innerHTML += `Another day: ${anotherDay.toUTCString()}<br>`;
+        function showTime (){
+            const curr = new Date();
+            // output.innerHTML = curr.toLocaleTimeString();
+            output.textContent = curr.toLocaleTimeString();
+        }
+        setInterval(showTime, 1000);
+    </script>
+</body>
+</html>

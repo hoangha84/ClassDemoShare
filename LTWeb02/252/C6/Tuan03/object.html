@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object in JS</title>
+  </head>
+  <body>
+    <p id="output"></p>
+    <script>
+      const person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        },
+        // Khong lấy được this trong arrow function
+        // getId: () => {return this.id},
+        getId: function () {return this.id},
+      };
+
+      const out = document.getElementById("output");
+      out.innerHTML += `ID of ${person.fullName()} is ${person.getId()}.`;
+
+      for(let x in person){
+        console.log(person[x]);
+      }
+
+    </script>
+  </body>
+</html>

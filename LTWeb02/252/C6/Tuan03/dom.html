@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM in JS</title>
+</head>
+<body>
+    <h1>Heading 1</h1>
+    <p>outside of div</p>
+    <input type="button" value="Change content" onclick="change();">
+    <input type="button" value="Remove all P" onclick="remove();">
+    <input type="text" name="name" id="name" value="ABC">
+    <input type="button" value="Add new paragraph" onclick="add();">
+    <div id="container">
+        <h2>Sub heading</h2>
+        <p>First content</p>
+        <p>Second paragraph</p>
+    </div>
+
+    <script>
+        // console.log(document.body.children[1].children[0].innerHTML);
+        // console.log(document.body.children[1].children[0].innerHTML);
+        function change(){
+            // const container = document.getElementById("container");
+            // const changedP = document.getElementsByTagName("p");            
+            // const changedP = container.getElementsByTagName("p"); 
+            const changedP = document.getElementsByTagName("div")[0].getElementsByTagName("p");
+            // console.log(changedP);
+            for(let i = 0; i<changedP.length; i++) {
+                changedP[i].innerHTML = "CHANGE!";
+            }
+        }
+
+        function add(){
+            const myDiv = document.getElementById("container");
+            const txt = document.getElementById("name").value;
+            const newP = document.createElement("p");
+            
+            for(let i = 0; i<2; i++){
+                newP.innerHTML = `${txt} ${i}`;
+                newP.style.color = "red";
+                myDiv.appendChild(newP.cloneNode(true));
+            }
+
+        }
+
+        function remove(){
+            const myDiv = document.getElementById("container");
+            const pInDiv = myDiv.getElementsByTagName("p");
+            while(pInDiv.length>=0){
+                myDiv.removeChild(pInDiv[0]);
+            }
+        }
+    </script>
+</body>
+</html>
