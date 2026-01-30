@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -29,6 +29,15 @@
         <th>Fr</th>
         <th>Sa</th>
       </tr>
+      <!-- <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+      </tr> -->
     </table>
     <script>
       const today = new Date();
@@ -37,19 +46,30 @@
         const firstDate = new Date(today.getFullYear(), today.getMonth(), 1);
         const firstDay = firstDate.getDay();
         console.log(firstDay);
-        for (let i = 0; i < 30; i++) {
-          const newTR = document.createElement("tr");
-          if (i < firstDay) {
+        const dayInMonth = new Date(
+          today.getFullYear(),
+          today.getMonth() + 1,
+          0
+        ).getDate();
+        console.log(dayInMonth + firstDay);
+        const newTR = document.createElement("tr");
+        for (let i = 1; i <= dayInMonth + firstDay; i++) {
+          console.log(`i: ${i}`);
+          if (i <= firstDay) {
             const newTD = document.createElement("td");
             newTD.innerHTML = "";
+            newTR.appendChild(newTD.cloneNode(true));
+          } else {
+            const newTD = document.createElement("td");
+            newTD.innerHTML = i - firstDay;
             newTR.appendChild(newTD);
-            continue;
+            if (newTR.children.length == 7) {
+              calendar.appendChild(newTR.cloneNode(true));
+              newTR.replaceChildren();
+            }
           }
-          const newTD = document.createElement("td");
-          newTD.innerHTML = i;
-          newTR.appendChild(newTD);
-          calendar.appendChild(newTR);
         }
+        calendar.appendChild(newTR.cloneNode(true));
       }
     </script>
   </body>
