@@ -165,7 +165,7 @@ $savedTBN = $_REQUEST['tbname'] ?? "accounts";
                             $u = "user" . rand(1000, 9999);
                             $p = rand(10000, 99999);
 
-                            $sql = "insert into $savedTBN value('$u', '$p')";
+                            $sql = "insert into $savedTBN values ('$u', '$p')";
                             $conn->exec($sql);
                             echo "Add sample ($u,$p) successfully!<br>";
                         } catch (PDOException $e) {
@@ -190,8 +190,42 @@ $savedTBN = $_REQUEST['tbname'] ?? "accounts";
 
                             $sql = "select * from $savedTBN";
                             $result = $conn->query($sql);
+
                             $colCount = $result->columnCount();
 
+
+                            ###
+                            // if ($result->rowCount() > 0) {
+                            //     echo "<table border='1'>";
+                
+                            //     // Biến cờ để chỉ in tiêu đề (th) một lần duy nhất ở hàng đầu tiên
+                            //     $isFirstRow = true;
+                
+                            //     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                            //         // 1. Tự động tạo hàng tiêu đề (thead) dựa trên các key của mảng $row
+                            //         if ($isFirstRow) {
+                            //             echo "<thead><tr>";
+                            //             foreach (array_keys($row) as $columnName) {
+                            //                 echo "<th>" . htmlspecialchars($columnName) . "</th>";
+                            //             }
+                            //             echo "</tr></thead><tbody>";
+                            //             $isFirstRow = false;
+                            //         }
+                
+                            //         // 2. In dữ liệu của từng hàng (tbody)
+                            //         echo "<tr>";
+                            //         foreach ($row as $value) {
+                            //             // Sử dụng htmlspecialchars để tránh lỗi hiển thị và bảo mật XSS
+                            //             echo "<td>" . htmlspecialchars($value ?? '') . "</td>";
+                            //         }
+                            //         echo "</tr>";
+                            //     }
+                
+                            //     echo "</tbody></table>";
+                            // } else {
+                            //     echo "Không tìm thấy dữ liệu.";
+                            // }
+                
                             ###
                             echo "<table><tr>";
                             for ($i = 0; $i < $colCount; $i++) {
@@ -199,6 +233,7 @@ $savedTBN = $_REQUEST['tbname'] ?? "accounts";
                             }
                             echo "</tr>";
                             // output data of each row
+                
                             if ($result->rowCount() > 0) {
                                 while ($row = $result->fetch()) {
                                     // echo $row['username'] . " - " . $row['password'] . "<br>";
